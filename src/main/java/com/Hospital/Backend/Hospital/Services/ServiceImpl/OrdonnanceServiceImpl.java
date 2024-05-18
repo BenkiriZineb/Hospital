@@ -33,4 +33,5 @@ public class OrdonnanceServiceImpl implements OrdonnanceService {
     public void deleteOrdonnance(Long id) {
         ordonnanceRepository.deleteById(id);
     }
+
 }

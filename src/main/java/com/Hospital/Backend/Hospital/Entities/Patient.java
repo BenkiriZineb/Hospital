@@ -1,11 +1,10 @@
 package com.Hospital.Backend.Hospital.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -14,5 +13,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @OneToMany(mappedBy = "patient")
+    private List<Ordonnance> ordonnances;
     // Getters and setters
 }
